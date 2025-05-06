@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clínica Bienestar</title>
+  <meta name="description" content="Clínica Bienestar ofrece atención médica integral con un enfoque en la salud y el bienestar de nuestros pacientes.">
+  <meta name="keywords" content="Clínica, Salud, Bienestar, Hospital, Atención Médica">
+  <link rel="icon" href="logo_clinica.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="heart"></div>
+  </div>
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+
+  <header>
+    <nav aria-label="Menú principal">
+      <div class="logo-container">
+        <img src="logo_clinica.png" alt="Logo Clínica Bienestar" class="logo-pareja">
+        <h1 class="site-title">Clínica Bienestar</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a> <!-- Aquí puedes redirigir al inicio -->
+        <a href="registro-paciente.html">Pacientes</a> <!-- Redirige a registro-paciente.html -->
+        <a href="registro-cita.html">Citas</a> <!-- Redirige a registro-cita.html -->
+        <a href="#historial-medico">Historial Médico</a> <!-- Si quieres redirigir a otra página, pon su ruta aquí -->
+      </div>
+    </nav>
+  </header>
+  
+  <main id="main">
+  
+    <!-- Hero Section -->
+    <section id="inicio" class="hero" role="banner">
+      <div class="hero-overlay">
+        <h2><span id="typing"></span><span class="cursor">|</span></h2>
+        <p>Atención médica de alta calidad con un enfoque en tu bienestar.</p>
+        <div class="cta-buttons">
+          <!-- Botón de Programar Cita Médica que redirige a la página de citas -->
+          <a href="registro-cita.html" class="cta-btn">Programar Cita Médica</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+    <!-- Sección de contacto y newsletter -->
+    <section id="contacto" class="contact-info">
+      <h3>Contáctanos</h3>
+      <p>Teléfono: (01) 123 456 789</p>
+      <p>Email: contacto@clinicabienestar.com</p>
+      <form class="newsletter" aria-label="Suscripción al boletín">
+        <label for="email-newsletter">Suscríbete a nuestro boletín:</label>
+        <input type="email" id="email-newsletter" name="email-newsletter" placeholder="Tu correo electrónico" required>
+        <button type="submit">Suscribirse</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Chat flotante WhatsApp -->
+  <a href="https://wa.me/51987654321" class="whatsapp-float" aria-label="WhatsApp">
+    <img src="whatsapp-icon.jpg" alt="">
+  </a>
+
+  <button id="back-to-top" aria-label="Volver arriba">↑</button>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Política de Privacidad</a>
+      <span>|</span>
+      <a href="#">Términos y Condiciones</a>
+      <span>|</span>
+      <a href="#">Mapa del Sitio</a>
+    </div>
+    <div class="social-media">
+      <a href="#" aria-label="Facebook"><img src="facebook-icon.png" alt=""></a>
+      <a href="#" aria-label="Twitter"><img src="twitter-icon.jpg" alt=""></a>
+      <a href="#" aria-label="Instagram"><img src="instagram-icon.jpg" alt=""></a>
+    </div>
+    <p>&copy; 2025 Clínica Bienestar | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Loader
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+    });
+
+    // Typing effect
+    const txts = ['Bienvenido a Clínica Bienestar', 'Confianza', 'Bienestar', 'Cuidado'];
+    let idx = 0, char = 0;
+
+    function type() {
+      const el = document.getElementById('typing');
+      if (char < txts[idx].length) {
+        el.textContent += txts[idx][char++];
+        setTimeout(type, 150);
+      } else {
+        setTimeout(erase, 2000);
+      }
+    }
+
+    function erase() {
+      const el = document.getElementById('typing');
+      if (char > 0) {
+        el.textContent = txts[idx].substring(0, --char);
+        setTimeout(erase, 100);
+      } else {
+        idx = (idx + 1) % txts.length;
+        setTimeout(type, 500);
+      }
+    }
+    type();
+
+    // Back to top
+    const btnTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => btnTop.style.display = window.scrollY > 300 ? 'block' : 'none');
+    btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+
+</html>

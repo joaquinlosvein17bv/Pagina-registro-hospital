@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programar Cita Médica | Clínica Bienestar</title>
+  <meta name="description" content="Formulario para programar citas médicas en Clínica Bienestar">
+  <meta name="keywords" content="Cita médica, Programar cita, Clínica, Consulta médica">
+  <link rel="icon" href="logo_clinica.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="programar-cita.css">
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Menú principal">
+      <div class="logo-container">
+        <img src="logo_clinica.png" alt="Logo Clínica Bienestar" class="logo-pareja">
+        <h1 class="site-title">Clínica Bienestar</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="registro-paciente.html">Registrar Paciente</a>
+        <a href="registro-cita.html" class="active">Programar Cita Médica</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="formulario-cita">
+      <h3>Formulario de Cita</h3>
+      <form id="form-cita">
+        <div class="field-container">
+          <label for="fecha-cita">Fecha y Hora de la Cita:</label>
+          <input type="datetime-local" id="fecha-cita" name="fecha-cita" required>
+        </div>
+      
+        <div class="field-container">
+          <label for="especialidad">Especialidad o Servicio Solicitado:</label>
+          <select id="especialidad" name="especialidad" required>
+            <option value="consulta">Consulta Médica</option>
+            <option value="examen">Examen</option>
+            <option value="terapia">Terapia</option>
+          </select>
+        </div>
+      
+        <div class="field-container">
+          <label for="profesional">Profesional Asignado:</label>
+          <select id="profesional" name="profesional">
+            <option value="juan">Dr. Juan Pérez</option>
+            <option value="ana">Dra. Ana López</option>
+          </select>
+        </div>
+      
+        <div class="field-container">
+          <label for="motivo">Motivo de la Cita (opcional):</label>
+          <textarea id="motivo" name="motivo" placeholder="Especifica el motivo de tu cita (opcional)"></textarea>
+        </div>
+      
+        <div class="field-container">
+          <label for="ubicacion">Ubicación o Dirección de la Consulta (si aplica):</label>
+          <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingresa la ubicación de la consulta (si presencial)">
+        </div>
+      
+        <div class="cta-buttons">
+          <button type="submit">Confirmar Cita</button>
+        </div>
+      </form>      
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Clínica Bienestar | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="registro-cita.js"></script>
+
+</body>
+</html>

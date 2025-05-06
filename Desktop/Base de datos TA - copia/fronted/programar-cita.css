@@ -1,0 +1,517 @@
+:root {
+    --color-primary:    #3498db;
+    --color-secondary:  #3498db;
+    --color-tertiary:   #3968ab;
+    --color-bg-start:   #f4f9fc;
+    --color-bg-end:     #e0e6f1;
+    --font-base:        'Poppins', sans-serif;
+    --font-heading:     'Lora', serif;
+    --spacing:          1rem;
+    --radius:           0.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-base);
+    background: linear-gradient(to bottom, var(--color-bg-start), var(--color-bg-end));
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    background: var(--color-secondary);
+    clip-path: polygon(50% 0%, 62% 12%, 75% 25%, 75% 40%, 50% 75%, 25% 40%, 25% 25%, 38% 12%);
+    animation: beat 1s infinite ease-in-out;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Skip-link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 8px;
+    transition: top 0.3s;
+    z-index: 1001;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.8s ease-out;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.8s ease-out;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: space-between; /* Espacia el logo y el menú */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Centra el logo y el texto verticalmente */
+    justify-content: center; /* Centra el logo y el texto horizontalmente */
+}
+
+.logo-pareja {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0; /* Elimina márgenes para alinear mejor */
+    padding: 0; /* Elimina padding innecesario */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: background 0.3s, transform 0.3s, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background: var(--color-tertiary);
+    transform: scale(1.05);
+    outline: none;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 80px;
+    height: 100vh;
+    background: #000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-out;
+    background-image: url('logo_fondo2.jpg'); /* Aquí reemplaza 'your-image.jpg' con tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    color: #fff;
+    max-width: 600px;
+    transition: background 0.3s;
+}
+
+.hero-overlay:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cursor {
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+    body {
+      background-image: url('fondo_registro.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Estilo para el formulario */
+    #formulario-paciente, #formulario-cita {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      width: 350px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .field-container {
+      margin-bottom: 15px;
+    }
+
+    .field-container input[type="text"],
+    .field-container input[type="email"],
+    .field-container input[type="tel"],
+    .field-container input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    /* Estilo para el botón */
+    .cta-buttons button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .cta-buttons button:active {
+      background-color: #003366;
+    }
+/* CTA Button */
+.cta-btn {
+    background: var(--color-secondary);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+    background: var(--color-tertiary);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.cta-btn:active {
+    transform: scale(0.95);
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espaciado entre los elementos del formulario */
+    max-width: 600px;
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px;
+    background-color: #f4f9fc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime-local"],
+textarea,
+select {
+    width: 100%; /* Asegura que todos los campos ocupen el 100% del ancho disponible */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Espaciado inferior para los campos */
+    font-size: 1rem;
+}
+
+/* Especialmente para el campo "Fecha y Hora de la Cita" */
+input[type="datetime-local"] {
+    width: 100%; /* Asegura que este campo también ocupe el 100% del ancho disponible */
+}
+
+/* Reajustar el campo de fecha de nacimiento para que coincida */
+input[type="date"] {
+    width: 100%; /* Asegura que el campo de fecha de nacimiento sea del mismo tamaño */
+}
+
+/* Otros ajustes para el formulario */
+.field-container {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Botón de confirmación */
+button[type="submit"] {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Estilo del título */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contacto / Newsletter */
+.contact-info {
+    background: linear-gradient(135deg, #e0e6f1, #fff);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter {
+    margin-top: 1.5rem;
+}
+
+.newsletter input {
+    padding: 0.75rem;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+}
+
+.newsletter button {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    margin-left: 0.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter button:hover,
+.newsletter button:focus {
+    background: #2a82c9;
+    outline: none;
+}
+
+/* WhatsApp float */
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 1000;
+}
+
+.whatsapp-float img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Back to top */
+#back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#back-to-top:hover {
+    background: #2a82c9;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background: var(--color-primary);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    text-decoration: underline;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .nav-links {
+        display: none;
+    }
+}

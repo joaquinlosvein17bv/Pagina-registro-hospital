@@ -163,7 +163,7 @@ nav {
     align-items: center;
     justify-content: center;
     animation: fadeIn 1s ease-out;
-    background-image: url('logo_fondo2.jpg'); /* Aquí reemplaza 'your-image.jpg' con tu imagen de fondo */
+    background-image: url('media/logo_fondo2.jpg'); /* Aquí reemplaza 'your-image.jpg' con tu imagen de fondo */
     background-size: cover;
     background-position: center;
 }

@@ -1,6 +1,6 @@
 :root {
     --color-primary:    #3498db;
-    --color-secondary:  #2ecc71;
+    --color-secondary:  #3498db;
     --color-tertiary:   #3968ab;
     --color-bg-start:   #f4f9fc;
     --color-bg-end:     #e0e6f1;
@@ -95,15 +95,28 @@ header {
     }
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.8s ease-out;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
 nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: space-between; /* Espacia el logo y el menú */
 }
 
 .logo-container {
     display: flex;
-    align-items: center;
+    align-items: center; /* Centra el logo y el texto verticalmente */
+    justify-content: center; /* Centra el logo y el texto horizontalmente */
 }
 
 .logo-pareja {
@@ -115,6 +128,13 @@ nav {
 .site-title {
     font-size: 1.8rem;
     color: #fff;
+    margin: 0; /* Elimina márgenes para alinear mejor */
+    padding: 0; /* Elimina padding innecesario */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
@@ -143,7 +163,7 @@ nav {
     align-items: center;
     justify-content: center;
     animation: fadeIn 1s ease-out;
-    background-image: url('logo_fondo.jpg'); /* Aquí reemplaza 'your-image.jpg' con tu imagen de fondo */
+    background-image: url('media/logo_fondo2.jpg'); /* Aquí reemplaza 'your-image.jpg' con tu imagen de fondo */
     background-size: cover;
     background-position: center;
 }
@@ -187,7 +207,33 @@ nav {
     margin-bottom: 1.5rem;
     line-height: 1.4;
 }
-
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .logo-header img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 80px;     /* ajusta tamaño del logo */
+    height: auto;
+  }
+  body {
+    background-image: url('fondo_registro.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: block; /* Cambiar de flex a block */
+    text-align: center; /* Centra el contenido del body */
+  }
 /* CTA Button */
 .cta-btn {
     background: var(--color-secondary);
@@ -210,6 +256,81 @@ nav {
 
 .cta-btn:active {
     transform: scale(0.95);
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espaciado entre los elementos del formulario */
+    max-width: 600px;
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px;
+    background-color: #f4f9fc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime-local"],
+textarea,
+select {
+    width: 100%; /* Asegura que todos los campos ocupen el 100% del ancho disponible */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Espaciado inferior para los campos */
+    font-size: 1rem;
+}
+
+/* Especialmente para el campo "Fecha y Hora de la Cita" */
+input[type="datetime-local"] {
+    width: 100%; /* Asegura que este campo también ocupe el 100% del ancho disponible */
+}
+
+/* Reajustar el campo de fecha de nacimiento para que coincida */
+input[type="date"] {
+    width: 100%; /* Asegura que el campo de fecha de nacimiento sea del mismo tamaño */
+}
+
+/* Otros ajustes para el formulario */
+.field-container {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Botón de confirmación */
+button[type="submit"] {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Estilo del título */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Contacto / Newsletter */
